@@ -1,0 +1,18 @@
+{
+  "status_code": 400,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 08:42:15 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "POST, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "45",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":false,\"message\":\"请输入密码\"}"
+}

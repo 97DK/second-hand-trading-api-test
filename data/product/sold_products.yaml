@@ -1,0 +1,17 @@
+# data/product/sold_products.yaml
+api_name: 我卖出的商品
+path: /api/products/sold-products/
+method: GET
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-PROD-021
+    name: 成功获取
+    description: 登录用户获取卖出的商品列表
+    tags: [smoke, p1, 商品管理, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"

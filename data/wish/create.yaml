@@ -1,0 +1,71 @@
+# data/wish/create.yaml
+api_name: 创建心愿
+path: /api/products/wishes/
+method: POST
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-WISH-001
+    name: 创建成功
+    description: 用户成功创建心愿
+    tags: [smoke, p1, 心愿管理, 正常场景]
+    data:
+      title: "想要教材"
+      description: "同济大学第七版"
+      max_price: 50
+    expected:
+      status_code: 201
+      check_points:
+        - "resp_json.get('id') is not None"
+        - "resp_json['title'] == '想要教材'"
+        - "resp_json['status'] == 'pending'"
+
+  - id: TC-WISH-002
+    name: 标题为空
+    description: 心愿标题字段值为空
+    tags: [regression, p2, 心愿管理, 参数异常]
+    data:
+      title: ""
+      description: "同济大学第七版"
+      max_price: 50
+    expected:
+      status_code: 400
+      message_contains: ["该字段不能为空。"]
+
+  - id: TC-WISH-003
+    name: 描述为空
+    description: 心愿描述字段值为空
+    tags: [regression, p2, 心愿管理, 参数异常]
+    data:
+      title: "想要教材"
+      description: ""
+      max_price: 50
+    expected:
+      status_code: 400
+      message_contains: ["该字段不能为空。"]
+
+  - id: TC-WISH-004
+    name: 无max_price
+    description: 不传递最高预算参数
+    tags: [regression, p2, 心愿管理, 边界场景]
+    data:
+      title: "想要教材"
+      description: "同济大学第七版"
+    expected:
+      status_code: 201
+      check_points:
+        - "resp_json.get('max_price') is None"
+
+  - id: TC-WISH-005
+    name: 权限验证
+    description: 验证未登录用户可以创建心愿
+    tags: [regression, p1, 心愿管理，权限验证]
+    auth_required: false
+    login_required: false
+    data:
+      title: "想要教材"
+      description: "同济大学第七版"
+      max_price: 50
+    expected:
+      status_code: 403

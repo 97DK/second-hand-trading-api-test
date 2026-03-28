@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:14:07 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, PATCH, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "59",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=86n9wcb2gjm0fcwgy5l2ndiuofe5a49r; expires=Tue, 17 Mar 2026 06:14:07 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"credit_score\":73,\"message\":\"您的信用分有待提升\"}"
+}

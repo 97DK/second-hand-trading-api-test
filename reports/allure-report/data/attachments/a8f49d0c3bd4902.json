@@ -1,0 +1,19 @@
+{
+  "status_code": 400,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 08:42:04 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "POST, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "50",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=b6q3br932w8q5yppfo3hqc6b0lh7lkyn; expires=Tue, 17 Mar 2026 08:42:04 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"error\":\"库存不足，当前库存仅剩60件\"}"
+}

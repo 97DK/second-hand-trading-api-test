@@ -1,0 +1,18 @@
+# data/appeal/negative.yaml
+api_name: 获取负面评价
+path: /api/products/negative-evaluations/
+method: GET
+content_type: application/json
+auth_required: true
+auth_type: seller
+
+test_cases:
+  - id: TC-APPEAL-006
+    name: 成功获取
+    description: 卖家获取自己的负面评价列表
+    tags: [smoke, p1, 申诉, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"

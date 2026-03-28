@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "url": "/api/users/register/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "crX5aDEYhzNVwRwi8Dwug3WTo9ftJDXbuFAHghM17f4rO8NWmLGdfXaWHmLF0FdC",
+    "Content-Length": "8845",
+    "Content-Type": "multipart/form-data; boundary=1e40328980edb653de89334d280937e5"
+  },
+  "body": {
+    "student_id": "20221080362",
+    "username": "num204",
+    "password": "",
+    "confirm_password": "TFBOYS2023"
+  }
+}

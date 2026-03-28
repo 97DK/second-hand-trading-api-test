@@ -1,0 +1,82 @@
+# data/product/my_products.yaml
+api_name: 我发布的商品
+path: /api/products/my-products/
+method: GET
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-PROD-017
+    name: 成功获取
+    description: 登录用户获取自己发布的商品列表
+    tags: [smoke, p1, 商品管理, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-018
+    name: 待审核商品筛选
+    description: 筛选待审核状态的商品
+    tags: [regression, p2, 商品管理, 正常场景]
+    query_params:
+      status: pending
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-019
+    name: 已上架商品筛选
+    description: 筛选已上架状态的商品
+    tags: [regression, p2, 商品管理, 正常场景]
+    query_params:
+      status: on_sale
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-020
+    name: 已下架商品筛选
+    description: 筛选已下架状态的商品
+    tags: [regression, p2, 商品管理, 正常场景]
+    query_params:
+      status: removed
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-021
+    name: 违规商品筛选
+    description: 筛选被拒绝状态的商品
+    tags: [regression, p2, 商品管理, 正常场景]
+    query_params:
+      status: rejected
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-022
+    name: 无效状态参数
+    description: 传递无效的状态参数
+    tags: [regression, p3, 商品管理, 参数异常]
+    query_params:
+      status: invalid_status
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-PROD-023
+    name: 未登录用户
+    description: 未登录用户尝试访问
+    tags: [regression, p1, 商品管理, 权限异常]
+    auth_required: false
+    data: {}
+    expected:
+      status_code: 401
+      message_contains: ["未认证", "登录"]

@@ -1,0 +1,61 @@
+# data/admin/wish_list.yaml
+api_name: 心愿管理列表
+path: /api/products/admin/wishes/
+method: GET
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+# 公共请求头
+headers:
+  User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  Accept: "application/json, text/plain, */*"
+  Accept-Language: "zh-CN,zh;q=0.9"
+  X-CSRFToken: "${csrf_token}"
+
+test_cases:
+  - id: TC-WISH-001
+    name: 获取未审核心愿列表
+    description: 管理员获取未审核的心愿列表
+    tags: [smoke, p0, 管理员, 正常场景]
+    query_params:
+      type: pending
+    expected:
+      status_code: 200
+      response_headers:
+        Content-Type: "application/json"
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "len(resp_json) >= 0"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"
+
+  - id: TC-WISH-002
+    name: 获取已通过心愿列表
+    description: 管理员获取已通过的心愿列表
+    tags: [smoke, p0, 管理员, 正常场景]
+    query_params:
+      type: approved
+    expected:
+      status_code: 200
+
+
+  - id: TC-WISH-003
+    name: 获取被拒绝心愿列表
+    description: 管理员获取被拒绝的心愿列表
+    tags: [smoke, p0, 管理员, 正常场景]
+    query_params:
+      type: rejected
+    expected:
+      status_code: 200
+
+
+  - id: TC-WISH-004
+    name: 非管理员访问心愿列表
+    description: 非管理员用户尝试访问心愿管理列表
+    tags: [regression, p1, 管理员, 权限异常]
+    auth_type: student
+    query_params:
+      type: pending
+    expected:
+      status_code: 200

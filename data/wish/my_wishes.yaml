@@ -1,0 +1,28 @@
+# data/wish/my_wishes.yaml
+api_name: 我的心愿
+path: /api/products/my-wishes/
+method: GET
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-WISH-006
+    name: 成功获取
+    description: 登录用户获取自己的心愿列表
+    tags: [smoke, p1, 心愿管理, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-WISH-007
+    name: 权限验证
+    description: 验证已登录用户可以获取心愿列表
+    tags: [regression, p1, 心愿管理，权限验证]
+    auth_required: false
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"

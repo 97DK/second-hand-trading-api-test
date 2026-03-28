@@ -1,0 +1,62 @@
+# data/appeal/submit.yaml
+api_name: 提交评价申诉
+path: /api/products/appeal/{evaluation_id}/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: seller
+
+test_cases:
+  - id: TC-APPEAL-001
+    name: 申诉成功
+    description: 卖家成功提交申诉
+    tags: [smoke, p1, 申诉, 正常场景]
+    setup:  # 前置步骤
+      - "获取负面评价列表"  # 先执行获取负面评价列表
+    path_params:
+      evaluation_id: "${first_negative_evaluation_id}"  # 使用提取的变量
+    data:
+      appeal_content: "买家恶意差评"
+    expected:
+      status_code: 200
+      success: true
+
+  - id: TC-APPEAL-002
+    name: 申诉内容为空
+    description: 申诉内容字段值为空
+    tags: [regression, p2, 申诉, 参数异常]
+    setup:  # 前置步骤
+      - "获取负面评价列表"  # 先执行获取负面评价列表
+    path_params:
+      evaluation_id: "${first_negative_evaluation_id}"  # 使用提取的变量
+    data: {}
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-APPEAL-003
+    name: 评价不存在
+    description: 对不存在的评价进行申诉
+    tags: [regression, p1, 申诉, 业务异常]
+    path_params:
+      evaluation_id: 999
+    data:
+      appeal_content: "申诉"
+    expected:
+      status_code: 404
+      message_contains: [""]
+
+  - id: TC-APPEAL-004
+    name: 非卖家用户
+    description: 非卖家用户尝试申诉
+    tags: [regression, p1, 申诉, 权限异常]
+    auth_type: student
+    setup:  # 前置步骤
+      - "获取负面评价列表"  # 先执行获取负面评价列表
+    path_params:
+      evaluation_id: "${first_negative_evaluation_id}"  # 使用提取的变量
+    data:
+      appeal_content: "申诉"
+    expected:
+      status_code: 403
+      message_contains: ["权限不足"]

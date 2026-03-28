@@ -1,0 +1,154 @@
+# data/user/login.yaml
+api_name: 用户登录
+path: /api/users/login/
+method: POST
+content_type: application/json
+auth_required: false
+
+test_cases:
+  - id: TC-AUTH-001
+    name: 学生用户成功登录
+    description: 验证学生用户可以正常登录
+    tags: [smoke, p0, 用户认证, 正常场景]
+    data:
+      user_type: student
+      username: sssas
+      password: TFBOYS2023
+    expected:
+      status_code: 200
+      success: true
+      check_points:
+        - "resp_json.get('user') is not None"
+        - "resp_json['user']['user_type'] == 'student'"
+        - "resp_json['user']['username'] == 'sssas'"
+
+  - id: TC-AUTH-002
+    name: 管理员成功登录
+    description: 验证管理员可以正常登录
+    tags: [smoke, p0, 用户认证, 正常场景]
+    data:
+      user_type: admin
+      username: admin
+      password: admin123
+    expected:
+      status_code: 200
+      success: true
+      check_points:
+        - "resp_json['user']['user_type'] == 'admin'"
+
+  - id: TC-AUTH-003
+    name: 未审核学生登录
+    description: 未通过审核的学生尝试登录
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      user_type: student
+      username: num20
+      password: TFBOYS2023
+    expected:
+      status_code: 400
+      message: "您的账号尚未通过审核，请耐心等待"
+
+  - id: TC-AUTH-004
+    name: 身份字段值为空
+    description: 用户类型字段为空字符串
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      user_type: ""
+      username: test
+      password: "123"
+    expected:
+      status_code: 400
+      message: "用户不存在"
+
+  - id: TC-AUTH-005
+    name: 用户名字段值为空
+    description: 用户名字段为空字符串
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      user_type: student
+      username: ""
+      password: "123"
+    expected:
+      status_code: 400
+      message: "请输入用户名"
+
+  - id: TC-AUTH-006
+    name: 密码字段值为空
+    description: 密码字段为空字符串
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      user_type: student
+      username: test
+      password: ""
+    expected:
+      status_code: 400
+      message: "请输入密码"
+
+  - id: TC-AUTH-007
+    name: 身份无效
+    description: 使用不存在的用户类型
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      user_type: teacher
+      username: test
+      password: "123"
+    expected:
+      status_code: 400
+      message: "用户不存在"
+
+  - id: TC-AUTH-008
+    name: 用户不存在
+    description: 使用不存在的用户名
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      user_type: student
+      username: nonexist
+      password: "123"
+    expected:
+      status_code: 400
+      message: "用户不存在"
+
+  - id: TC-AUTH-009
+    name: 密码错误
+    description: 输入错误的密码
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      user_type: student
+      username: sssas
+      password: TFBOYS202
+    expected:
+      status_code: 400
+      message: "密码错误"
+
+  - id: TC-AUTH-010
+    name: 无参
+    description: 不传递任何参数
+    tags: [regression, p2, 用户认证, 参数异常]
+    data: {}
+    expected:
+      status_code: 400
+      message_contains: ["请输入用户名"]
+
+  - id: TC-AUTH-011
+    name: 错参-无效身份值
+    description: 使用无效的身份值
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      user_type: s
+      username: sssas
+      password: TFBOYS2023
+    expected:
+      status_code: 400
+      message: "用户不存在"
+
+  - id: TC-AUTH-012
+    name: 错参-指定分类下用户不存在
+    description: 使用学生身份登录管理员账号
+    tags: [regression, p2, 用户认证, 业务异常]
+    data:
+      user_type: student
+      username: admin
+      password: admin123
+    expected:
+      status_code: 400
+      message: "用户不存在"

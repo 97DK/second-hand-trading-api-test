@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "url": "/api/products/admin/appeals/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "jE7VTKhZk52nGlJA2pebADOYeKHdxyMMsQM0QF8r2heXPL3pA4WtKvtkovX7DYAO",
+    "Content-Type": "application/json",
+    "Cookie": "csrftoken=jmPf751CSmmKjAuZIPSsk2PwkVq4gAYc; sessionid=lpee0exsr9nt9gpn4j8io06dnvniq681",
+    "Content-Length": "57"
+  },
+  "body": {
+    "action": "approve",
+    "response_content": "内容"
+  }
+}

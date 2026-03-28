@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "url": "/api/users/password-reset-request/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "GOj1uXt1PvTZHLp8FRRrtfpuHapuDV0gdIiTI2pyDEaibchUCij28w09QEXHFte6",
+    "Content-Type": "multipart/form-data",
+    "Content-Length": "78"
+  },
+  "body": {
+    "student_id": 20221080117,
+    "student_name": "张三",
+    "new_password": "TFBOYS2023"
+  }
+}

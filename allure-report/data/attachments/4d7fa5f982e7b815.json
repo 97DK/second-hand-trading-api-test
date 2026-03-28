@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:15:44 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "POST, OPTIONS",
+    "x-frame-options": "DENY",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "content-length": "246",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "csrftoken=tDGtCiTBhHyEQHQIYlY3tf03lTCwT3IZ; expires=Tue, 02 Mar 2027 06:15:44 GMT; Max-Age=31449600; Path=/; SameSite=Lax, sessionid=wm5zsyp58z2dlftc6afnihbktvct34rd; expires=Tue, 17 Mar 2026 06:15:44 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":true,\"user\":{\"id\":2,\"username\":\"sssas\",\"nickname\":\"用户0110\",\"avatar\":null,\"student_id\":\"20221080110\",\"is_verified\":true,\"user_type\":\"student\",\"student_card_photo\":null,\"balance\":\"1495.00\",\"credit_score\":15},\"message\":\"登录成功\"}"
+}

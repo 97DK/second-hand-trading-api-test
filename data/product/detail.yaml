@@ -1,0 +1,32 @@
+# data/product/detail.yaml
+api_name: 获取商品详情
+path: /api/products/{product_id}/
+method: GET
+content_type: application/json
+auth_required: false
+
+test_cases:
+  - id: TC-PROD-010
+    name: 公开访问
+    description: 未登录用户可以查看商品详情
+    tags: [smoke, p1, 商品管理, 正常场景]
+    path_params:
+      product_id: 1
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "resp_json.get('id') is not None"
+        - "resp_json.get('title') is not None"
+        - "resp_json.get('price') is not None"
+
+  - id: TC-PROD-011
+    name: 商品不存在
+    description: 查看不存在的商品
+    tags: [regression, p2, 商品管理, 业务异常]
+    path_params:
+      product_id: 999
+    data: {}
+    expected:
+      status_code: 404
+      message_contains: ["不存在", "No Product"]

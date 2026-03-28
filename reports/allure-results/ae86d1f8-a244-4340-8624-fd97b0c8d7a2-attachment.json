@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 08:41:59 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, POST, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "528",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=d405ix2nor47eycd8kxb614ehytkylj2; expires=Tue, 17 Mar 2026 08:41:59 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":true,\"message\":\"评价提交成功\",\"data\":{\"id\":105,\"product\":141,\"buyer\":3,\"seller\":2,\"received_item\":\"yes\",\"description_match\":\"yes\",\"service_attitude\":\"yes\",\"evidence_photos\":[],\"appeal_status\":\"pending\",\"appeal_status_display\":\"待申诉\",\"appeal_content\":\"\",\"appeal_evidence_photos\":[],\"appeal_response\":\"\",\"appeal_deadline\":\"2026-03-04T16:41:59.620366+08:00\",\"created_at\":\"2026-03-03T16:41:59.623346+08:00\",\"buyer_nickname\":\"用户0111\",\"seller_nickname\":\"用户0110\",\"product_title\":\"2\"},\"deduction_points\":0}"
+}

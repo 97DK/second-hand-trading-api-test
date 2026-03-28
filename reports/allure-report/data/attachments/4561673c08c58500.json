@@ -1,0 +1,20 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 08:40:41 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, POST, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=lpee0exsr9nt9gpn4j8io06dnvniq681; expires=Tue, 17 Mar 2026 08:40:41 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive",
+    "Content-Encoding": "gzip",
+    "Transfer-Encoding": "chunked"
+  },
+  "body": "[{\"id\":144,\"title\":\"e\",\"description\":\"e\",\"price\":\"2.00\",\"category\":\"book\",\"condition\":\"below_six\",\"status\":\"pending\",\"dormitory_building\":\"1\",\"inventory\":1,\"images\":null,\"created_at\":\"2026-03-03T15:38:59.961963+08:00\",\"seller\":2,\"buyer\":null,\"seller_nickname\":\"用户0110\",\"seller_avatar\":null,\"seller_credit_score\":-23,\"additional_images\":[]},{\"id\":145,\"title\":\"3\",\"description\":\"2\",\"price\":\"1.00\",\"category\":\"life\",\"condition\":\"seven\",\"status\":\"pending\",\"dormitory_building\":\"1\",\"inventory\":1,\"images\":null,\"created_at\":\"2026-03-03T15:39:12.382054+08:00\",\"seller\":2,\"buyer\":null,\"seller_nickname\":\"用户0110\",\"seller_avatar\":null,\"seller_credit_score\":-23,\"additional_images\":[]},{\"id\":146,\"title\":\"3\",\"description\":\"2\",\"price\":\"1.00\",\"category\":\"life\",\"condition\":\"below_six\",\"status\":\"pending\",\"dormitory_building\":\"1\",\"inventory\":1,\"images\":null,\"created_at\":\"2026-03-03T15:39:24.002591+08:00\",\"seller\":2,\"buyer\":null,\"seller_nickname\":\"用户0110\",\"seller_avatar\":null,\"seller_credit_score\":-23,\"additional_images\":[]},{\"id\":147,\"title\":\"3\",\"description\":\"2\",\"price\":\"1.00\",\"category\":\"life\",\"condition\":\"below_six\",\"status\":\"pending\",\"dormitory_building\":\"·\",\"inventory\":1,\"images\":null,\"created_at\":\"2026-03-03T15:39:36.162955+08:00\",\"seller\":2,\"buyer\":null,\"seller_nickname\":\"用户0110\",\"seller_avatar\":null,\"seller_credit_score\":-23,\"additional_images\":[]},{\"id\":148,\"title\":\"3\",\"description\":\"2\",\"price\":\"2.00\",\"category\":\"life\",\"condition\":\"below_six\",\"status\":\"pending\",\"dormitory_building\":\"··\",\"inventory\":1,\"images\":null,\"created_at\":\"2026-03-03T15:39:50.754197+08:00\",\"seller\":2,\"buyer\":null,\"seller_nickname\":\"用户0110\",\"seller_avatar\":null,\"seller_credit_score\":-23,\"additional_images\":[]},{\"id\":149,\"title\":\"2\",\"description\":\"3\",\"price\":\"4.00\",\"category\":\"book\",\"condition\":\"seven\",\"status\":\"pending\",\"dormitory_building\":\"5\",\"inventory\":1,\"images\":\"/media/products/product_Y1DVq74.jpg\",\"created_at\":\"2026-03-03T15:45:51.858532+08:00\",\"seller\":3,\"buyer\":null,\"seller_nickname\":\"用户0111\",\"seller_avatar\":null,\"seller_credit_score\":49,\"additional_images\":[]}]"
+}

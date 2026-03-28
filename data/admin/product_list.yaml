@@ -1,0 +1,77 @@
+# data/admin/product_list.yaml
+api_name: 商品管理列表
+path: /api/products/admin/
+method: GET
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+test_cases:
+  - id: TC-ADMIN-001
+    name: 获取待审核商品列表
+    description: 管理员获取待审核商品列表
+    tags: [smoke, p1, 管理员, 正常场景]
+    query_params:
+      type: pending
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "len(resp_json) >= 0"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"
+    extract:  # 提取变量
+      pending_product_ids: "[item['id'] for item in resp_json]"  # 提取所有待审核商品ID
+      first_pending_product_id: "resp_json[0]['id'] if resp_json else None"  # 提取第一个商品ID
+
+  - id: TC-ADMIN-002
+    name: 获取已审核商品列表
+    description: 管理员获取已审核商品列表
+    tags: [regression, p2, 管理员, 正常场景]
+    query_params:
+      type: approved
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"
+
+  - id: TC-ADMIN-003
+    name: 获取被拒绝商品列表
+    description: 管理员获取被拒绝商品列表
+    tags: [regression, p2, 管理员, 正常场景]
+    query_params:
+      type: rejected
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"
+
+  - id: TC-ADMIN-004
+    name: 不传type参数获取所有商品
+    description: 管理员不传type参数获取所有商品列表
+    tags: [regression, p2, 管理员, 正常场景]
+    query_params: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"
+
+
+  - id: TC-ADMIN-005
+    name: 参数异常-无效类型
+    description: 传递无效的查询类型参数
+    tags: [regression, p3, 管理员, 参数异常]
+    query_params:
+      type: invalid_type
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        - "all('id' in item and 'title' in item for item in resp_json)"

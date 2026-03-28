@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 08:40:41 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, POST, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "47",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=lpee0exsr9nt9gpn4j8io06dnvniq681; expires=Tue, 17 Mar 2026 08:40:41 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":true,\"message\":\"用户已被拒绝\"}"
+}

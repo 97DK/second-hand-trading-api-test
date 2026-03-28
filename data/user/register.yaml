@@ -1,0 +1,180 @@
+# data/user/register.yaml
+api_name: 用户注册
+path: /api/users/register/
+method: POST
+content_type: multipart/form-data
+auth_required: false
+
+test_cases:
+  - id: TC-AUTH-011
+    name: 注册成功
+    description: 学生成功提交注册申请
+    tags: [smoke, p0, 用户认证, 正常场景]
+    data:
+      student_id: 20221080117
+      username: num6
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 200
+      message: "注册成功，请等待管理员审核"
+
+  - id: TC-AUTH-012
+    name: 学号为空
+    description: 学号字段值为空
+    tags: [regression, p2, 用户认证，参数异常]
+    data:
+      student_id: ""
+      username: num7
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+
+  - id: TC-AUTH-013
+    name: 用户名为空
+    description: 用户名字段值为空
+    tags: [regression, p2, 用户认证，参数异常]
+    data:
+      student_id: 20221080118
+      username: ""
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+
+  - id: TC-AUTH-014
+    name: 密码为空
+    description: 密码字段值为空
+    tags: [regression, p2, 用户认证，参数异常]
+    data:
+      student_id: 20221080118
+      username: num7
+      password: ""
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+
+  - id: TC-AUTH-015
+    name: 确认密码为空
+    description: 确认密码字段值为空
+    tags: [regression, p2, 用户认证，参数异常]
+    data:
+      student_id: 20221080118
+      username: num6
+      password: TFBOYS2023
+      confirm_password: ""
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+
+  - id: TC-AUTH-016
+    name: 密码不一致
+    description: 两次输入的密码不一致
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      student_id: 20221080118
+      username: num6
+      password: TFBOYS2023
+      confirm_password: TFBOYS202
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+      message: "两次输入的密码不一致"
+
+  - id: TC-AUTH-017
+    name: 缺少照片
+    description: 未上传学生证照片
+    tags: [regression, p1, 用户认证，参数异常]
+    data:
+      student_id: 20221080118
+      username: num6
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    expected:
+      status_code: 400
+
+  - id: TC-AUTH-018
+    name: 学号重复
+    description: 使用已存在的学号注册
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      student_id: 20221080118
+      username: new_user
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+      message: "该学号已注册"
+
+  - id: TC-AUTH-019
+    name: 用户名重复
+    description: 使用已存在的用户名注册
+    tags: [regression, p1, 用户认证, 业务异常]
+    data:
+      student_id: 20221080119
+      username: num6
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+      message: "已存在一位使用该名字的用户。"
+
+  - id: TC-AUTH-021
+    name: 文件过大
+    description: 上传超过7MB的图片
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      student_id: 20221080119
+      username: num8
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@15mb.jpg"
+    expected:
+      status_code: 400
+      message: "学生证照片大小不能超过7MB"
+
+  - id: TC-AUTH-022
+    name: 密码小于8位
+    description: 密码长度不足8位
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      student_id: 20221080119
+      username: num8
+      password: TFBOYS
+      confirm_password: TFBOYS
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+      message: "密码长度不能少于8位"
+
+  - id: TC-AUTH-023
+    name: 学号大于20位
+    description: 学号长度超过20位
+    tags: [regression, p2, 用户认证, 参数异常]
+    data:
+      student_id: 2022108011920221080119
+      username: num8
+      password: TFBOYS2023
+      confirm_password: TFBOYS2023
+    files:
+      student_card_photo: "@studentcard.jpg"
+    expected:
+      status_code: 400
+      message: "请确保这个字段不能超过 20 个字符"

@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "url": "/api/users/login/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "crX5aDEYhzNVwRwi8Dwug3WTo9ftJDXbuFAHghM17f4rO8NWmLGdfXaWHmLF0FdC",
+    "Content-Type": "application/json",
+    "Content-Length": "71"
+  },
+  "body": {
+    "user_type": "student",
+    "username": "num20",
+    "password": "TFBOYS2023"
+  }
+}

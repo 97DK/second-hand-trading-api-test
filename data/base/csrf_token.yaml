@@ -1,0 +1,33 @@
+# data/base/csrf_token.yaml
+api_name: 获取CSRF Token
+path: /api/users/csrf-token/
+method: GET
+content_type: application/json
+auth_required: false
+
+# 公共请求头
+headers:
+  User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  Accept: "application/json, text/plain, */*"
+  Accept-Language: "zh-CN,zh;q=0.9"
+  Cache-Control: "no-cache"
+  Connection: "keep-alive"
+
+test_cases:
+  - id: TC-BASE-001
+    name: 正常获取Token
+    description: 验证可以成功获取CSRF Token
+    tags: [smoke, p0, 基础接口, 正常场景]
+    headers:
+      X-Request-ID: "req-${uuid}"
+      X-Timestamp: "${timestamp}"
+    expected:
+      status_code: 200
+      response_headers:
+        Content-Type: "application/json"
+        Cache-Control: "no-cache"
+      check_points:
+        - "resp_json.get('csrfToken') is not None"
+        - "len(resp_json.get('csrfToken', '')) > 0"
+        - "isinstance(resp_json.get('csrfToken'), str)"
+

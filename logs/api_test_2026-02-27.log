@@ -1,0 +1,228 @@
+2026-02-27 18:03:58 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/login.yaml 加载了 12 个测试用例
+2026-02-27 18:04:27 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/login.yaml 加载了 12 个测试用例
+2026-02-27 18:04:27 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/login.yaml -> 12 个用例
+2026-02-27 18:04:27 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/register.yaml 加载了 12 个测试用例
+2026-02-27 18:04:27 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/register.yaml -> 12 个用例
+2026-02-27 18:04:27 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/logout.yaml 加载了 2 个测试用例
+2026-02-27 18:04:27 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/logout.yaml -> 2 个用例
+2026-02-27 18:04:27 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/profile.yaml 加载了 2 个测试用例
+2026-02-27 18:04:27 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/profile.yaml -> 2 个用例
+2026-02-27 18:04:27 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/password_reset.yaml 加载了 5 个测试用例
+2026-02-27 18:04:27 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/password_reset.yaml -> 5 个用例
+2026-02-27 18:04:29 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置
+2026-02-27 18:04:29 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:04:34 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAC9F3910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:34 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAC9F3910>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:36 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:04:41 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAF5CD5D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:41 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAF5CD5D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:41 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:04:46 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB19C0650>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:46 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB19C0650>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:47 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:04:52 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C6DB10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:52 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C6DB10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:52 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:04:57 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C61410>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:57 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C61410>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:04:58 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:03 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C6DB50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:03 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C6DB50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:03 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:08 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C9D250>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:08 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C9D250>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:09 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:13 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CA4E50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:13 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CA4E50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:14 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:19 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C62CD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:19 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0C62CD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:19 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:24 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CD5F90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:24 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CD5F90>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:25 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:30 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CE9C10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:30 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CB0CE9C10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:30 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:05:34 | ERROR | core.send_request:send:131 | 请求异常: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAF57D650>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:05:34 | ERROR | testcase.base_test:execute:46 | 测试执行失败: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/users/login/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022CAF57D650>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/login.yaml 加载了 12 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/logout.yaml 加载了 2 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/password_reset.yaml 加载了 5 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/profile.yaml 加载了 2 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/register.yaml 加载了 12 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/appeal_manage.yaml 加载了 5 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/product_manage.yaml 加载了 6 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/user_audit.yaml 加载了 5 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/user_manage.yaml 加载了 4 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/wish_manage.yaml 加载了 3 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/bought_products.yaml 加载了 1 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/create.yaml 加载了 9 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/detail.yaml 加载了 2 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/my_products.yaml 加载了 3 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/purchase.yaml 加载了 5 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 product/sold_products.yaml 加载了 1 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 appeal/detail.yaml 加载了 1 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 appeal/negative.yaml 加载了 1 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 appeal/submit.yaml 加载了 4 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 credit/appeal.yaml 加载了 3 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 credit/get_score.yaml 加载了 2 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 credit/update_score.yaml 加载了 6 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 evaluation/get.yaml 加载了 1 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 evaluation/submit.yaml 加载了 8 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 finance/recharge.yaml 加载了 6 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 finance/withdraw.yaml 加载了 4 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 wish/create.yaml 加载了 5 个测试用例
+2026-02-27 18:06:52 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 wish/my_wishes.yaml 加载了 2 个测试用例
+2026-02-27 18:09:48 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/user_manage.yaml 加载了 4 个测试用例
+2026-02-27 18:09:48 | INFO | core.data_driver:parametrize:41 | 参数化加载: admin/user_manage.yaml -> 4 个用例
+2026-02-27 18:09:48 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/user_audit.yaml 加载了 5 个测试用例
+2026-02-27 18:09:48 | INFO | core.data_driver:parametrize:41 | 参数化加载: admin/user_audit.yaml -> 5 个用例
+2026-02-27 18:09:48 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/product_manage.yaml 加载了 6 个测试用例
+2026-02-27 18:09:48 | INFO | core.data_driver:parametrize:41 | 参数化加载: admin/product_manage.yaml -> 6 个用例
+2026-02-27 18:09:48 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/wish_manage.yaml 加载了 3 个测试用例
+2026-02-27 18:09:48 | INFO | core.data_driver:parametrize:41 | 参数化加载: admin/wish_manage.yaml -> 3 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 admin/appeal_manage.yaml 加载了 5 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: admin/appeal_manage.yaml -> 5 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/login.yaml 加载了 12 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/login.yaml -> 12 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/register.yaml 加载了 12 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/register.yaml -> 12 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/logout.yaml 加载了 2 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/logout.yaml -> 2 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/profile.yaml 加载了 2 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/profile.yaml -> 2 个用例
+2026-02-27 18:09:49 | INFO | common.read_yaml:get_testcase_yaml:41 | 从 user/password_reset.yaml 加载了 5 个测试用例
+2026-02-27 18:09:49 | INFO | core.data_driver:parametrize:41 | 参数化加载: user/password_reset.yaml -> 5 个用例
+2026-02-27 18:09:49 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置
+2026-02-27 18:09:50 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:52 | INFO | core.send_request:_log_response:88 | 响应状态码: 200
+2026-02-27 18:09:52 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:52 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:52 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望200, 实际403
+assert 403 == 200
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:53 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:53 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:53 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:53 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:53 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:53 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:53 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:53 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:53 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:53 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:53 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:53 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 403
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际403
+assert 403 == 400
+ +  where 403 = <Response [403]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望201, 实际400
+assert 400 == 201
+ +  where 400 = <Response [400]>.status_code
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请输入学号', 实际''
+assert '请输入学号' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请输入用户名', 实际''
+assert '请输入用户名' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请输入密码', 实际''
+assert '请输入密码' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请确认密码', 实际''
+assert '请确认密码' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'两次输入的密码不一致', 实际''
+assert '两次输入的密码不一致' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请上传学生证照片', 实际''
+assert '请上传学生证照片' in ''
+2026-02-27 18:09:54 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:54 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:54 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'该学号已注册', 实际''
+assert '该学号已注册' in ''
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'该用户名已被使用', 实际''
+assert '该用户名已被使用' in ''
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'学生证照片大小不能超过7MB', 实际''
+assert '学生证照片大小不能超过7MB' in ''
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'密码长度不能少于8位', 实际''
+assert '密码长度不能少于8位' in ''
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/register/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 400
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: message字段不匹配: 期望包含'请确保这个字段不能超过 20 个字符', 实际''
+assert '请确保这个字段不能超过 20 个字符' in ''
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/password-reset/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 404
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望200, 实际404
+assert 404 == 200
+ +  where 404 = <Response [404]>.status_code
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/password-reset/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 404
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际404
+assert 404 == 400
+ +  where 404 = <Response [404]>.status_code
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/password-reset/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 404
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际404
+assert 404 == 400
+ +  where 404 = <Response [404]>.status_code
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/password-reset/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 404
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际404
+assert 404 == 400
+ +  where 404 = <Response [404]>.status_code
+2026-02-27 18:09:55 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/password-reset/
+2026-02-27 18:09:55 | INFO | core.send_request:_log_response:88 | 响应状态码: 404
+2026-02-27 18:09:55 | ERROR | testcase.base_test:execute:46 | 测试执行失败: 状态码不匹配: 期望400, 实际404
+assert 404 == 400
+ +  where 404 = <Response [404]>.status_code

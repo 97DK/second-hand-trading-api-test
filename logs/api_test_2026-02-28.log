@@ -1,0 +1,11 @@
+2026-02-28 13:39:39 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置
+2026-02-28 13:40:35 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置
+2026-02-28 13:40:35 | INFO | core.send_request:_handle_auth:212 | 登录前自动获取CSRF Token
+2026-02-28 13:40:35 | INFO | core.send_request:_log_request:77 | 发送请求: GET http://localhost:8000/api/users/csrf-token/
+2026-02-28 13:40:37 | INFO | core.send_request:_log_response:88 | 响应状态码: 200
+2026-02-28 13:40:37 | INFO | core.send_request:get_csrf_token:290 | CSRF Token获取成功: AHdncWJE8j...
+2026-02-28 13:40:37 | INFO | core.send_request:_log_request:77 | 发送请求: POST http://localhost:8000/api/users/login/
+2026-02-28 13:40:38 | INFO | core.send_request:_log_response:88 | 响应状态码: 200
+2026-02-28 13:40:38 | INFO | core.send_request:login:248 | 登录成功: sssas (student)
+2026-02-28 17:29:12 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置
+2026-02-28 21:03:24 | INFO | core.send_request:_init_session:100 | HTTP会话初始化完成，默认Headers已设置

@@ -1,0 +1,18 @@
+{
+  "method": "POST",
+  "url": "/api/products/74/purchase/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "hebFhakQkPVD8bwS24QWqNxEFU0dWNnOiexq7ye4rlVrNcJWHimbP9aEdwxbVw3I",
+    "Content-Type": "application/json",
+    "Cookie": "csrftoken=bawV0y4ohGaYPbnePoGpzwNaIMH89TQ4; sessionid=b6q3br932w8q5yppfo3hqc6b0lh7lkyn",
+    "Content-Length": "15"
+  },
+  "body": {
+    "quantity": 1
+  }
+}

@@ -1,0 +1,27 @@
+# data/credit/get_score.yaml
+api_name: 获取信用分
+path: /api/users/credit-score/
+method: GET
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-CREDIT-001
+    name: 登录用户获取
+    description: 已登录用户可以获取自己的信用分
+    tags: [smoke, p1, 信用分, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "resp_json.get('credit_score') is not None"
+        - "resp_json.get('message') is not None"
+
+  - id: TC-CREDIT-002
+    name: 未登录用户
+    description: 未登录用户尝试获取信用分
+    tags: [regression, p2, 信用分, 权限异常]
+    auth_required: false
+    data: {}
+    expected:
+      status_code: 200

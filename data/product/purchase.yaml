@@ -1,0 +1,79 @@
+# data/product/purchase.yaml
+api_name: 购买商品
+path: /api/products/{product_id}/purchase/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: student
+
+test_cases:
+  - id: TC-PROD-012
+    name: 购买成功
+    description: 用户成功购买商品
+    tags: [smoke, p0, 商品管理, 正常场景]
+    setup:  # 前置步骤
+      - "获取商品列表"  # 先执行获取商品列表
+    path_params:
+      product_id: "${first_product_id}"  # 使用动态获取的商品ID
+    data:
+      quantity: 1
+    expected:
+      status_code: 200
+      success: true
+      message: "购买成功"
+
+  - id: TC-PROD-013
+    name: 购买自己商品
+    description: 用户购买自己发布的商品
+    tags: [regression, p1, 商品管理, 业务异常]
+    setup:  # 前置步骤
+      - "获取商品列表"  # 先执行获取商品列表
+    path_params:
+      product_id: 74  # 使用动态获取的商品ID
+    data:
+      quantity: 1
+    expected:
+      status_code: 400
+      message: ""
+
+  - id: TC-PROD-014
+    name: 库存不足
+    description: 购买数量超过库存
+    tags: [regression, p1, 商品管理, 业务异常]
+    setup:  # 前置步骤
+      - "获取商品列表"  # 先执行获取商品列表
+    path_params:
+      product_id: "${first_product_id}"  # 使用动态获取的商品ID
+    data:
+      quantity: 999
+    expected:
+      status_code: 400
+      message_contains: ["库存不足"]
+
+  - id: TC-PROD-015
+    name: 未登录用户
+    description: 未登录用户尝试购买
+    tags: [regression, p1, 商品管理, 权限异常]
+    auth_required: false
+    setup:  # 前置步骤
+      - "获取商品列表"  # 先执行获取商品列表
+    path_params:
+      product_id: "${first_product_id}"  # 使用动态获取的商品ID
+    data:
+      quantity: 1
+    expected:
+      status_code: 401
+      message_contains: ["未认证", "登录"]
+
+  - id: TC-PROD-016
+    name: 无参
+    description: 不传递quantity参数，使用默认值1
+    tags: [regression, p2, 商品管理, 边界场景]
+    setup:  # 前置步骤
+      - "获取商品列表"  # 先执行获取商品列表
+    path_params:
+      product_id: "${first_product_id}"  # 使用动态获取的商品ID
+    data: {}
+    expected:
+      status_code: 200
+      success: true

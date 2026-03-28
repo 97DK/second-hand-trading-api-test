@@ -1,0 +1,67 @@
+# data/finance/recharge.yaml
+api_name: 用户充值
+path: /api/users/recharge/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: student
+
+test_cases:
+  - id: TC-FIN-001
+    name: 充值成功
+    description: 学生用户成功充值
+    tags: [smoke, p1, 财务管理, 正常场景]
+    data:
+      amount: 100.00
+    expected:
+      status_code: 200
+
+  - id: TC-FIN-002
+    name: 金额为空
+    description: 不传递金额参数
+    tags: [regression, p2, 财务管理, 参数异常]
+    data: {}
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-FIN-003
+    name: 金额小于0.01
+    description: 充值金额小于最小限额
+    tags: [regression, p2, 财务管理, 参数异常]
+    data:
+      amount: 0.001
+    expected:
+      status_code: 400
+      message_contains: ["充值金额必须在0.01-9999之间"]
+
+  - id: TC-FIN-004
+    name: 金额大于9999
+    description: 充值金额超过最大限额
+    tags: [regression, p2, 财务管理, 参数异常]
+    data:
+      amount: 10000
+    expected:
+      status_code: 400
+      message_contains: ["充值金额必须在0.01-9999之间"]
+
+  - id: TC-FIN-005
+    name: 非数字金额
+    description: 金额参数为非数字类型
+    tags: [regression, p2, 财务管理, 参数异常]
+    data:
+      amount: "abc"
+    expected:
+      status_code: 400
+      message_contains: ["无效的金额"]
+
+  - id: TC-FIN-006
+    name: 未登录用户
+    description: 未登录用户尝试充值
+    tags: [regression, p1, 财务管理, 权限异常]
+    auth_required: false
+    data:
+      amount: 100
+    expected:
+      status_code: 200
+      message_contains: []

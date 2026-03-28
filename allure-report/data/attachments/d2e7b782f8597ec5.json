@@ -1,0 +1,18 @@
+{
+  "status_code": 400,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:15:50 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "POST, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "60",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":false,\"message\":\"两次输入的密码不一致\"}"
+}

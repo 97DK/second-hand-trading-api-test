@@ -1,0 +1,46 @@
+# data/finance/withdraw.yaml
+api_name: 用户提现
+path: /api/users/withdraw/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: student
+
+test_cases:
+  - id: TC-FIN-007
+    name: 提现成功
+    description: 学生用户成功提现
+    tags: [smoke, p1, 财务管理, 正常场景]
+    data:
+      amount: 50.00
+    expected:
+      status_code: 200
+
+  - id: TC-FIN-008
+    name: 提现金额为空
+    description: 不传递金额参数
+    tags: [regression, p2, 财务管理, 参数异常]
+    data: {}
+    expected:
+      status_code: 400
+      message_contains: ["无效的金额"]
+
+  - id: TC-FIN-009
+    name: 金额大于余额
+    description: 提现金额超过账户余额
+    tags: [regression, p1, 财务管理, 业务异常]
+    data:
+      amount: 100000
+    expected:
+      status_code: 400
+      message_contains: ["提现金额无效"]
+
+  - id: TC-FIN-010
+    name: 金额小于0.01
+    description: 提现金额小于最小限额
+    tags: [regression, p2, 财务管理, 参数异常]
+    data:
+      amount: 0.001
+    expected:
+      status_code: 400
+      message_contains: ["提现金额无效"]

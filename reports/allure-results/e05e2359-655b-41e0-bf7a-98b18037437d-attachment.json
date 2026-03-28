@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "url": "/api/products/wishes/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "1MLPaaXSvLYXS0eOlvCd8tX1xFVQkFg3gYmtNSBujJK5WKI7LixeZS9SoXNODKxw",
+    "Content-Type": "application/json",
+    "Cookie": "csrftoken=pmLONSOMY8WieUEtAX5b1zm11s28tfrD; sessionid=tpvjhri2i3ztoi2wjnt45xyv8r6j35d7",
+    "Content-Length": "98"
+  },
+  "body": {
+    "title": "想要教材",
+    "description": "同济大学第七版"
+  }
+}

@@ -1,0 +1,70 @@
+# data/admin/user_audit.yaml
+api_name: 用户审核
+path: /api/users/admin/users/{user_id}/{action}/
+method: POST
+auth_required: true
+auth_type: admin
+
+# 变量定义部分
+variables:
+  pending_user_id: "${pending_user_id}"  # 动态获取的待审核用户ID
+
+test_cases:
+  - id: TC-ADMIN-005
+    name: 通过审核
+    description: 管理员通过用户审核
+    tags: [smoke, p0, 正常场景]
+    path_params:
+      user_id: "${pending_user_id}"  # 使用动态变量
+      action: approve
+    setup:
+      - "获取待审核用户列表"
+    expected:
+      status_code: 200
+      message: "用户已通过审核"
+
+  - id: TC-ADMIN-006
+    name: 拒绝审核
+    description: 管理员拒绝用户审核
+    tags: [smoke, p0, 正常场景]
+    path_params:
+      user_id: "${pending_user_id}"  # 使用动态变量
+      action: reject
+    setup:
+      - "获取待审核用户列表"
+    expected:
+      status_code: 200
+      message: "用户已被拒绝"
+
+  - id: TC-ADMIN-007
+    name: 用户不存在
+    description: 审核不存在的用户
+    tags: [regression, p1, 业务异常]
+    path_params:
+      user_id: 999
+      action: approve
+    expected:
+      status_code: 404
+      message: ""
+
+  - id: TC-ADMIN-008
+    name: 无效操作
+    description: 使用无效的操作类型
+    tags: [regression, p2, 参数异常]
+    path_params:
+      user_id: 1
+      action: invalid
+    expected:
+      status_code: 400
+      message: ""
+
+  - id: TC-ADMIN-004
+    name: 非管理员访问
+    description: 学生用户尝试访问管理员接口
+    tags: [regression, p1, 权限异常]
+    path_params:
+      user_id: 1
+      action: approve
+    auth_type: student
+    expected:
+      status_code: 200

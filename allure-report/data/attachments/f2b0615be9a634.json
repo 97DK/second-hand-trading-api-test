@@ -1,0 +1,19 @@
+{
+  "status_code": 400,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:15:30 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, POST, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "44",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=itbzoa7v5lrvqnsy7lvlnlfgehg5h2yj; expires=Tue, 17 Mar 2026 06:15:30 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"description\":[\"该字段不能为空。\"]}"
+}

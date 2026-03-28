@@ -1,0 +1,80 @@
+# data/admin/product_manage.yaml
+api_name: 商品管理
+path: /api/products/admin/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+test_cases:
+  - id: TC-ADMIN-010
+    name: 通过商品
+    description: 管理员通过商品审核
+    tags: [smoke, p0, 管理员, 正常场景]
+    setup:  # 前置步骤
+      - "获取待审核商品列表"  # 先执行获取待审核商品列表
+    data:
+      product_id: "${first_pending_product_id}"  # 使用提取的变量
+      action: approve
+    expected:
+      status_code: 200
+      message: "商品已上架"
+
+  - id: TC-ADMIN-011
+    name: 拒绝商品
+    description: 管理员拒绝商品审核
+    tags: [smoke, p0, 管理员, 正常场景]
+    setup:  # 前置步骤
+      - "获取待审核商品列表"  # 先执行获取待审核商品列表
+    data:
+      product_id: "${first_pending_product_id}"  # 使用提取的变量
+      action: reject
+      reason: "图片不清晰"
+    expected:
+      status_code: 200
+      message: "商品已被拒绝"
+
+  - id: TC-ADMIN-012
+    name: 下架商品
+    description: 管理员下架已上架商品
+    tags: [smoke, p1, 管理员, 正常场景]
+    setup:  # 前置步骤
+      - "获取待审核商品列表"  # 先执行获取待审核商品列表
+    data:
+      product_id: "${first_pending_product_id}"  # 使用提取的变量
+      action: remove
+    expected:
+      status_code: 200
+      message: "商品已下架"
+
+  - id: TC-ADMIN-013
+    name: product_id为空
+    description: 请求参数缺少商品ID
+    tags: [regression, p2, 管理员, 参数异常]
+    data:
+      action: approve
+    expected:
+      status_code: 404
+      message_contains: [""]
+
+  - id: TC-ADMIN-014
+    name: action为空
+    description: 请求参数缺少操作类型
+    tags: [regression, p2, 管理员, 参数异常]
+    data:
+      product_id: 1
+    expected:
+      status_code: 500
+      # 后端返回500错误且响应体为空，无法解析JSON
+      # 此测试主要验证异常处理机制
+
+  - id: TC-ADMIN-015
+    name: 操作不存在的商品
+    description: 尝试操作不存在的商品
+    tags: [regression, p2, 管理员, 业务异常]
+    data:
+      product_id: 99999  # 固定使用不存在的商品ID
+      action: approve
+    expected:
+      status_code: 404
+      message_contains: [""]

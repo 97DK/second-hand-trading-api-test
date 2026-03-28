@@ -1,0 +1,20 @@
+# data/credit/update_score.yaml
+api_name: 更新信用分
+path: /api/users/credit-score/
+method: PATCH
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+test_cases:
+  - id: TC-CREDIT-003
+    name: 管理员更新成功
+    description: 管理员成功更新用户信用分
+    tags: [smoke, p1, 信用分, 正常场景]
+    data:
+      user_id: 1
+      credit_score: 100
+    expected:
+      status_code: 200
+      success: true
+

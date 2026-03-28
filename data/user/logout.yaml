@@ -1,0 +1,28 @@
+# data/user/logout.yaml
+api_name: 用户登出
+path: /api/users/logout/
+method: POST
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-AUTH-022
+    name: 已登录用户登出
+    description: 已登录用户成功登出（保持认证状态）
+    tags: [smoke, p1, 用户认证, 正常场景]
+    auth_required: true
+    data:
+      keep_auth: true
+    expected:
+      status_code: 200
+      message: "已成功退出登录"
+
+  - id: TC-AUTH-023
+    name: 未登录用户登出
+    description: 未登录用户尝试登出
+    tags: [regression, p2, 用户认证, 权限异常]
+    auth_required: false
+    data: {}
+    expected:
+      status_code: 200
+      message: "已成功退出登录"

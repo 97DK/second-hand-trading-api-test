@@ -1,0 +1,49 @@
+# data/admin/user_manage.yaml
+api_name: 获取用户管理数据
+path: /api/users/admin/users/
+method: GET
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+test_cases:
+  - id: TC-ADMIN-001
+    name: 获取所有用户
+    description: 管理员获取所有用户列表
+    tags: [smoke, p1, 管理员, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-ADMIN-002
+    name: 筛选待审核
+    description: 管理员筛选待审核用户
+    tags: [regression, p2, 管理员, 正常场景]
+    query_params:
+      type: pending
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+
+  - id: TC-ADMIN-003
+    name: 筛选已审核
+    description: 管理员筛选已审核用户
+    tags: [regression, p2, 管理员, 正常场景]
+    query_params:
+      type: verified
+    expected:
+      status_code: 200
+
+
+  - id: TC-ADMIN-004
+    name: 非管理员访问
+    description: 非管理员用户尝试访问
+    tags: [regression, p1, 管理员, 权限异常]
+    auth_type: student
+    data: {}
+    expected:
+      status_code: 200
+      message: "权限不足"

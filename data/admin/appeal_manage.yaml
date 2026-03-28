@@ -1,0 +1,106 @@
+# data/admin/appeal_manage.yaml
+api_name: 申诉管理
+path: /api/products/admin/appeals/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+# 公共请求头
+headers:
+  X-CSRFToken: "${csrf_token}"
+
+test_cases:
+  - id: TC-ADMIN-020
+    name: 通过申诉
+    description: 管理员通过申诉审核
+    tags: [smoke, p0, 管理员, 正常场景]
+    setup:  # 前置步骤
+      - "获取待审核申诉列表"  # 先执行获取待审核申诉列表
+    data:
+      evaluation_id: "${first_submitted_appeal_id}"  # 使用提取的变量
+      action: approve
+      response_content: "申诉通过，维持原评价"
+    expected:
+      status_code: 200
+      success: true
+      message_contains: ["申诉处理完成，维持原评价"]
+
+  - id: TC-ADMIN-021
+    name: 驳回申诉
+    description: 管理员驳回申诉
+    tags: [smoke, p0, 管理员, 正常场景]
+    setup:  # 前置步骤
+      - "获取待审核申诉列表"  # 先执行获取待审核申诉列表
+    data:
+      evaluation_id: "${first_submitted_appeal_id}"  # 使用提取的变量
+      action: reject
+      response_content: "申述不通过！！"
+    expected:
+      status_code: 200
+      success: true
+      message_contains: ["申诉处理完成"]
+      deduction_points: 2
+
+  - id: TC-ADMIN-022
+    name: evaluation_id为空
+    description: 缺少评价ID参数
+    tags: [regression, p2, 管理员, 参数异常]
+    data:
+      action: approve
+      response_content: "内容"
+    expected:
+      status_code: 404
+      message_contains: [""]
+
+  - id: TC-ADMIN-023
+    name: action为空
+    description: 缺少操作类型参数
+    tags: [regression, p2, 管理员, 参数异常]
+    setup:  # 前置步骤
+      - "获取待审核申诉列表"  # 先执行获取待审核申诉列表
+    data:
+      evaluation_id: "${first_submitted_appeal_id}"  # 使用提取的变量
+      response_content: "内容"
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-ADMIN-024
+    name: response_content为空
+    description: 缺少处理说明参数
+    tags: [regression, p2, 管理员, 参数异常]
+    setup:  # 前置步骤
+      - "获取待审核申诉列表"  # 先执行获取待审核申诉列表
+    data:
+      evaluation_id: "${first_submitted_appeal_id}"  # 使用提取的变量
+      action: reject
+    expected:
+      status_code: 200
+      message_contains: ["申诉处理完成"]
+
+  - id: TC-ADMIN-025
+    name: 操作不存在的申诉
+    description: 尝试操作不存在的申诉记录
+    tags: [regression, p2, 管理员, 业务异常]
+    data:
+      evaluation_id: 99999
+      action: approve
+      response_content: "测试内容"
+    expected:
+      status_code: 404
+      message_contains: [""]
+
+  - id: TC-ADMIN-026
+    name: action参数无效
+    description: 提供无效的操作类型
+    tags: [regression, p2, 管理员, 参数异常]
+    setup:  # 前置步骤
+      - "获取待审核申诉列表"  # 先执行获取待审核申诉列表
+    data:
+      evaluation_id: "${first_submitted_appeal_id}"  # 使用提取的变量
+      action: invalid_action
+      response_content: "内容"
+    expected:
+      status_code: 400
+      message_contains: [""]

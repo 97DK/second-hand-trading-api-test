@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "url": "/api/users/logout/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "50xRBhe6k5J8fWZarHqrJSRTjWZNdzhwIXZRRnmVC7Yfph86Vln2HrzeTOoFT61s",
+    "Content-Type": "application/json",
+    "Cookie": "csrftoken=vIjO4e9c3vus3XVsKJnEKZoUP4AJYYI8; sessionid=bpcajvfrbdojiv6rr0bvpixgu8u87slm",
+    "Content-Length": "0"
+  },
+  "body": {}
+}

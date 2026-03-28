@@ -1,0 +1,19 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:14:11 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "POST, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "410",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "set-cookie": "sessionid=itbzoa7v5lrvqnsy7lvlnlfgehg5h2yj; expires=Tue, 17 Mar 2026 06:14:11 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax",
+    "connection": "keep-alive"
+  },
+  "body": "{\"success\":true,\"message\":\"申诉提交成功\",\"data\":{\"id\":53,\"user\":3,\"deduction_points\":1,\"reason\":\"malicious_review\",\"reason_display\":\"malicious_review\",\"description\":\"恶意评价扣分：1\",\"appeal_status\":\"submitted\",\"appeal_status_display\":\"已申诉\",\"appeal_content\":\"申诉理由\",\"appeal_response\":\"\",\"created_at\":\"2026-03-03T14:13:59.124863+08:00\",\"updated_at\":\"2026-03-03T14:14:11.868289+08:00\"}}"
+}

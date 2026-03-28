@@ -1,0 +1,19 @@
+{
+  "method": "PATCH",
+  "url": "/api/users/credit-score/",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "application/json, text/plain, */*",
+    "Connection": "keep-alive",
+    "Accept-Language": "zh-CN,zh;q=0.9",
+    "X-CSRFToken": "JtdOB1T1R8nBVolVUpguo5oJnuxqL3SNFdsjB5nhhg6EzS6UxV4HyMlRvpOtKyml",
+    "Content-Type": "application/json",
+    "Cookie": "csrftoken=Orp5bgIU4lusy1k4FiP0g9vOpDjehvIY; sessionid=8zfjvdq70460zeoh2ccgla84h2e7vv0w",
+    "Content-Length": "35"
+  },
+  "body": {
+    "user_id": 1,
+    "credit_score": 100
+  }
+}

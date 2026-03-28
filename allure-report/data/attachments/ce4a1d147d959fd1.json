@@ -1,0 +1,18 @@
+{
+  "status_code": 200,
+  "headers": {
+    "X-Powered-By": "Express",
+    "date": "Tue, 03 Mar 2026 06:15:31 GMT",
+    "server": "WSGIServer/0.2 CPython/3.11.0",
+    "content-type": "application/json",
+    "allow": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS",
+    "x-frame-options": "DENY",
+    "content-length": "609",
+    "Vary": "Cookie, origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "same-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "connection": "keep-alive"
+  },
+  "body": "{\"id\":1,\"title\":\"Python编程全6册\",\"description\":\"Python编程全6册：Python编程 从入门到实践 第3版+编程快速上手+轻松进阶+极客项目编程+编程实战+Python\",\"price\":\"245.00\",\"category\":\"book\",\"condition\":\"new\",\"status\":\"sold\",\"dormitory_building\":\"D18宿管\",\"inventory\":1,\"images\":\"http://127.0.0.1:8000/media/products/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_2025-11-30_125837.jpg\",\"created_at\":\"2025-11-30T13:00:24.629026+08:00\",\"seller\":2,\"buyer\":3,\"seller_nickname\":\"用户0110\",\"buyer_nickname\":\"用户0111\",\"seller_avatar\":null,\"seller_credit_score\":15,\"additional_images\":[]}"
+}

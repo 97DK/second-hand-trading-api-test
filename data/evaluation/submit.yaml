@@ -1,0 +1,138 @@
+# data/evaluation/submit.yaml
+api_name: 提交评价
+path: /api/products/{product_id}/evaluate/
+method: POST
+content_type: application/json
+auth_required: true
+auth_type: evaluation_student  # 使用专门的评价测试账号 num3
+
+test_cases:
+  - id: TC-EVAL-001
+    name: 好评提交
+    description: 买家提交好评
+    tags: [smoke, p1, 评价, 正常场景]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      received_item: "yes"
+      description_match: "yes"
+      service_attitude: "yes"
+      evidence_photos: []
+    expected:
+      status_code: 200
+      success: true
+      check_points:
+        - "resp_json.get('deduction_points') == 0"
+
+  - id: TC-EVAL-002
+    name: 差评有证据
+    description: 买家提交差评并上传证据
+    tags: [smoke, p1, 评价, 正常场景]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      received_item: "no"
+      description_match: "no"
+      service_attitude: "no"
+      evidence_photos: ["/media/evidence/photo1.jpg"]
+    expected:
+      status_code: 200
+      success: true
+
+  - id: TC-EVAL-003
+    name: 差评无证据
+    description: 买家提交差评但未上传证据
+    tags: [regression, p2, 评价, 参数异常]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      received_item: "no"
+      description_match: "yes"
+      service_attitude: "yes"
+      evidence_photos: []
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-EVAL-004
+    name: received_item为空
+    description: 是否收到货字段为空
+    tags: [regression, p2, 评价, 参数异常]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      description_match: "yes"
+      service_attitude: "yes"
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-EVAL-005
+    name: description_match为空
+    description: 描述一致字段为空
+    tags: [regression, p2, 评价, 参数异常]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      received_item: "yes"
+      service_attitude: "yes"
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-EVAL-006
+    name: service_attitude为空
+    description: 服务态度字段为空
+    tags: [regression, p2, 评价, 参数异常]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用提取的变量
+    data:
+      received_item: "yes"
+      description_match: "yes"
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-EVAL-007
+    name: 商品不存在
+    description: 对不存在的商品进行评价
+    tags: [regression, p1, 评价, 业务异常]
+    path_params:
+      product_id: 999
+    data:
+      received_item: "yes"
+      description_match: "yes"
+      service_attitude: "yes"
+      evidence_photos: []
+    expected:
+      status_code: 404
+      message_contains: [""]
+
+  - id: TC-EVAL-008
+    name: 未购买用户
+    description: 未购买商品的用户尝试评价
+    tags: [regression, p1, 评价, 权限异常]
+    setup:  # 前置步骤
+      - "获取已购买商品列表(remove_used)"  # 使用移除已使用ID策略
+    path_params:
+      product_id: "${first_bought_product_id}"  # 使用动态获取的商品ID
+    data:
+      received_item: "yes"
+      description_match: "yes"
+      service_attitude: "yes"
+      evidence_photos: []
+    expected:
+      status_code: 400
+      message_contains: ["未购买"]

@@ -1,0 +1,46 @@
+# data/credit/appeal.yaml
+api_name: 提交信用申诉
+path: /api/users/credit-appeal/{deduction_id}/
+method: POST
+content_type: application/json
+auth_required: true
+
+test_cases:
+  - id: TC-CREDIT-009
+    name: 提交成功
+    description: 用户成功提交信用申诉
+    tags: [regression, p1, 信用分, 正常场景]
+    setup:  # 前置步骤
+      - "获取信用扣分记录列表"  # 先执行获取信用扣分记录列表
+    path_params:
+      deduction_id: "${first_credit_deduction_id}"  # 使用提取的变量
+    data:
+      appeal_content: "申诉理由"
+    expected:
+      status_code: 200
+      success: true
+
+  - id: TC-CREDIT-010
+    name: 申诉内容为空
+    description: 申诉内容字段值为空
+    tags: [regression, p2, 信用分, 参数异常]
+    setup:  # 前置步骤
+      - "获取信用扣分记录列表"  # 先执行获取信用扣分记录列表
+    path_params:
+      deduction_id: "${first_credit_deduction_id}"  # 使用提取的变量
+    data: {}
+    expected:
+      status_code: 400
+      message_contains: [""]
+
+  - id: TC-CREDIT-011
+    name: 申诉ID不存在
+    description: 使用不存在的扣分记录ID
+    tags: [regression, p1, 信用分, 业务异常]
+    path_params:
+      deduction_id: 999
+    data:
+      appeal_content: "申诉理由"
+    expected:
+      status_code: 404
+      message_contains: [""]

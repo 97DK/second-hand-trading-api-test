@@ -1,0 +1,85 @@
+# data/admin/appeal_list.yaml
+api_name: 获取待申诉列表
+path: /api/products/admin/appeals/
+method: GET
+content_type: application/json
+auth_required: true
+auth_type: admin
+
+# 公共请求头
+headers:
+  User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  Accept: "application/json, text/plain, */*"
+  Accept-Language: "zh-CN,zh;q=0.9"
+  X-CSRFToken: "${csrf_token}"
+
+test_cases:
+  - id: TC-ADMIN-019-1
+    name: 成功获取待申诉列表
+    description: 管理员成功获取待申诉列表
+    tags: [smoke, p0, 管理员, 正常场景]
+    data: {}
+    expected:
+      status_code: 200
+      response_headers:
+        Content-Type: "application/json"
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "len(resp_json) >= 0"
+        - "all(isinstance(item, dict) for item in resp_json)"
+        # 验证必要字段存在
+        - "all('id' in item and 'product' in item and 'buyer' in item and 'seller' in item for item in resp_json)"
+        # 验证状态字段
+        - "all('appeal_status' in item and 'appeal_status_display' in item for item in resp_json)"
+        # 验证证据照片格式
+        - "all(isinstance(item.get('evidence_photos', []), list) for item in resp_json)"
+        - "all(isinstance(item.get('appeal_evidence_photos', []), list) for item in resp_json)"
+
+  - id: TC-ADMIN-019-2
+    name: 获取已提交申诉列表
+    description: 管理员获取已提交的申诉列表
+    tags: [smoke, p0, 管理员, 正常场景]
+    query_params:
+      appeal_status: submitted
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(item.get('appeal_status') == 'submitted' for item in resp_json)"
+        - "all(item.get('appeal_status_display') == '已申诉' for item in resp_json)"
+
+  - id: TC-ADMIN-019-3
+    name: 获取已提交申诉列表
+    description: 管理员获取已提交的申诉列表
+    tags: [regression, p1, 管理员, 正常场景]
+    query_params:
+      appeal_status: submitted
+    expected:
+      status_code: 200
+      check_points:
+        - "isinstance(resp_json, list)"
+        - "all(item.get('appeal_status') == 'submitted' for item in resp_json)"
+
+  - id: TC-ADMIN-019-4
+    name: 验证申诉数据完整性
+    description: 验证返回的申诉数据包含所有必要字段
+    tags: [regression, p1, 管理员, 数据验证]
+    data: {}
+    expected:
+      status_code: 200
+
+  - id: TC-ADMIN-019-5
+    name: 验证证据照片数据结构
+    description: 验证申诉中的证据照片数据结构正确
+    tags: [regression, p2, 管理员, 数据验证]
+    data: {}
+    expected:
+      status_code: 200
+
+  - id: TC-ADMIN-019-6
+    name: 非管理员访问
+    description: 非管理员用户尝试获取待申诉列表
+    tags: [regression, p1, 管理员, 权限异常]
+    auth_type: student
+    expected:
+      status_code: 200
