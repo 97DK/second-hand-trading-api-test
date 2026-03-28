@@ -1,8 +1,16 @@
 # 接口自动化测试框架 (apiautotest)
 
 基于pytest的接口自动化测试框架，专为Django REST API设计。
+
 #测试报告展示
-测试报告详情：https://blog.csdn.net/m0_75096185/article/details/158621048?
+测试结果概览
+https://./screenshots/report_overview.png
+
+用例执行详情
+https://./screenshots/report_details.png
+
+详细测试数据
+https://./screenshots/detail.png
 
 ## 📁 项目结构
 
