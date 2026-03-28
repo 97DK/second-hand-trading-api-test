@@ -2,15 +2,14 @@
 
 基于pytest的接口自动化测试框架，专为Django REST API设计。
 
-#测试报告展示
-测试结果概览
-https://./screenshots/report_overview.png
+### 测试结果概览
+![测试结果概览](./screenshots/report_overview.png)
 
-用例执行详情
-https://./screenshots/report_details.png
+### 用例执行详情
+![用例详情](./screenshots/report_details.png)
 
-详细测试数据
-https://./screenshots/detail.png
+### 详细测试数据
+![详细数据](./screenshots/detail.png)
 
 ## 📁 项目结构
 
