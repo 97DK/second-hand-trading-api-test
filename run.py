@@ -60,12 +60,14 @@ def build_pytest_args(args):
     
     # 生成 Allure 报告
     if args.allure:
-        allure_dir = Path(__file__).parent / 'reports' / 'allure-results'
-        allure_dir.mkdir(parents=True, exist_ok=True)
+        # 统一使用 reports 目录下的子文件夹
+        allure_results_dir = Path(__file__).parent / 'reports' / 'allure-results'
+        allure_results_dir.mkdir(parents=True, exist_ok=True)
         pytest_args.extend([
-            f'--alluredir={allure_dir}'
+            f'--alluredir={allure_results_dir}'
         ])
-        print(f"Allure 报告数据将保存到：{allure_dir}")
+        print(f"Allure 原始数据将保存到：{allure_results_dir}")
+        print(f"提示：运行 'allure generate reports/allure-results -o reports/allure-report --clean' 生成可视化报告")
 
     return pytest_args
 
